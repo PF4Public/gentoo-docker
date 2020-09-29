@@ -9,3 +9,5 @@ RUN emerge -qv app-portage/layman
 RUN layman -q -f -a pf4public
 
 RUN emerge -qv --onlydeps ungoogled-chromium
+
+RUN layman -q -d pf4public
