@@ -4,7 +4,7 @@ FROM gentoo/stage3:latest
 
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
-RUN echo "www-client/ungoogled-chromium\napp-misc/font-manager\napp-editors/vscode" > /etc/portage/package.accept_keywords
+RUN echo -e "www-client/ungoogled-chromium\napp-misc/font-manager\napp-editors/vscode" > /etc/portage/package.accept_keywords
 
 RUN eselect profile set default/linux/amd64/17.1/desktop
 
@@ -12,6 +12,6 @@ RUN emerge -qv app-portage/layman
 
 RUN yes | layman -f -a pf4public
 
-RUN emerge -qv --onlydeps ungoogled-chromium font-manager
+RUN emerge -qv --autounmask-continue=y --onlydeps ungoogled-chromium font-manager
 
 RUN layman -d pf4public
