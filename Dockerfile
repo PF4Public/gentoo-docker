@@ -12,6 +12,8 @@ RUN emerge -qv app-portage/layman
 
 RUN yes | layman -f -a pf4public
 
+RUN emerge -qv --unmerge sys-apps/sandbox
+
 RUN FEATURES="-sandbox" emerge -qv --autounmask-continue=y --onlydeps ungoogled-chromium font-manager
 
 RUN layman -d pf4public
