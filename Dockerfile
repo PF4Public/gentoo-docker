@@ -12,6 +12,6 @@ RUN emerge -qv --unmerge sys-apps/sandbox
 
 #RUN FEATURES="-sandbox" emerge -qv --autounmask-continue=y --onlydeps ungoogled-chromium font-manager
 
-RUN FEATURES="-sandbox" emerge -qv --autounmask-continue=y dev-util/gn dev-lang/vala media-libs/opus
+RUN FEATURES="-sandbox" emerge -qv --autounmask-continue=y dev-util/gn media-libs/opus
 
 #RUN layman -d pf4public
