@@ -16,6 +16,6 @@ RUN eselect profile set default/linux/amd64/17.1/desktop
 
 #RUN FEATURES="-sandbox" emerge -qv --autounmask-continue=y --onlydeps ungoogled-chromium font-manager
 
-RUN emerge -qv --autounmask-continue=y dev-util/gn dev-lang/vala
+RUN emerge -qv --autounmask-continue=y dev-util/gn dev-lang/vala media-libs/opus
 
 #RUN layman -d pf4public
