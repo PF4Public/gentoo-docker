@@ -8,10 +8,10 @@ RUN eselect profile set default/linux/amd64/17.1/desktop
 #RUN emerge -qv app-portage/layman
 #RUN yes | layman -f -a pf4public
 
-#RUN emerge -qv --unmerge sys-apps/sandbox
+RUN emerge -qv --unmerge sys-apps/sandbox
 
 #RUN FEATURES="-sandbox" emerge -qv --autounmask-continue=y --onlydeps ungoogled-chromium font-manager
 
-RUN emerge -qv --autounmask-continue=y dev-util/gn dev-lang/vala media-libs/opus
+RUN FEATURES="-sandbox" emerge -qv --autounmask-continue=y dev-util/gn dev-lang/vala media-libs/opus
 
 #RUN layman -d pf4public
