@@ -12,7 +12,8 @@ RUN yes | layman -f -a pf4public
 
 #RUN emerge -qv --unmerge sys-apps/sandbox
 
-RUN emerge -v --onlydeps ungoogled-chromium font-manager
+RUN emerge -v --onlydeps ungoogled-chromium font-manager electron
+RUN emerge -v --fetchonly ungoogled-chromium font-manager electron
 
 #RUN FEATURES="-sandbox" emerge -v  dev-util/gn media-libs/opus
 
