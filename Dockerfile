@@ -12,7 +12,7 @@ RUN emerge -v --unmerge net-misc/openssh sys-apps/sandbox
 RUN emerge -v app-portage/layman
 RUN yes | layman -f -a pf4public
 
-RUN emerge -v --binpkg-respect-use=n media-video/ffmpeg dev-lang/rust sys-devel/clang sys-devel/llvm media-libs/mesa
+RUN emerge -v --binpkg-respect-use=n dev-lang/rust sys-devel/clang sys-devel/llvm
 
 RUN emerge -v --onlydeps ungoogled-chromium font-manager electron
 RUN emerge -v --fetchonly ungoogled-chromium font-manager electron
