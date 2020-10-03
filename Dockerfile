@@ -17,7 +17,7 @@ RUN emerge -v --binpkg-respect-use=n dev-lang/rust sys-devel/clang sys-devel/llv
 RUN emerge -v --onlydeps ungoogled-chromium font-manager electron
 RUN emerge -v --fetchonly ungoogled-chromium font-manager electron
 
-RUN emerge -v dev-libs/json-glib x11-libs/libva app-text/yelp-tools media-sound/pulseaudio x11-libs/libxkbcommon
+RUN emerge -v dev-libs/json-glib x11-libs/libva app-text/yelp-tools media-sound/pulseaudio x11-libs/libxkbcommon app-misc/jq
 RUN emerge -v --nodeps gnome-base/nautilus gnome-extra/nemo xfce-base/thunar
 
 #RUN FEATURES="-sandbox" emerge -v  dev-util/gn media-libs/opus
