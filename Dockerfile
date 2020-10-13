@@ -15,7 +15,7 @@ RUN yes | layman -f -a pf4public
 RUN emerge -v --binpkg-respect-use=n sys-devel/clang sys-devel/llvm gnome-base/librsvg
 RUN emerge -v x11-libs/libva app-text/yelp-tools media-sound/pulseaudio x11-libs/libxkbcommon gnome-base/nautilus xfce-base/thunar dev-libs/wayland
 
-RUN emerge -v --onlydeps ungoogled-chromium font-manager electron
+RUN emerge -v --onlydeps ungoogled-chromium font-manager electron app-admin/gb-chroot
 RUN emerge -v --fetchonly ungoogled-chromium font-manager electron
 
 RUN layman -d pf4public
