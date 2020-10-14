@@ -8,11 +8,11 @@ RUN echo -e "PORTAGE_BINHOST='ftp://ftp.calculate-linux.org/calculate/grp/x86_64
 
 RUN eselect profile set default/linux/amd64/17.1/desktop
 
-RUN emerge -v --unmerge net-misc/openssh sys-apps/sandbox virtual/jpeg media-libs/jpeg
+RUN emerge -v --unmerge net-misc/openssh sys-apps/sandbox
 RUN emerge -v app-portage/layman
 RUN yes | layman -f -a pf4public
 
-RUN emerge -v --binpkg-respect-use=n sys-devel/clang sys-devel/llvm media-libs/libjpeg-turbo gnome-base/librsvg
+RUN emerge -v --binpkg-respect-use=n sys-devel/clang sys-devel/llvm media-libs/libjpeg-turbo virtual/jpeg gnome-base/librsvg
 RUN emerge -v app-text/yelp-tools media-sound/pulseaudio x11-libs/libxkbcommon gnome-base/nautilus xfce-base/thunar dev-libs/wayland
 
 RUN emerge -v --onlydeps ungoogled-chromium font-manager electron app-admin/gb-chroot
