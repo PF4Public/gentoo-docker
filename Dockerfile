@@ -12,7 +12,8 @@ RUN emerge -v --unmerge net-misc/openssh sys-apps/sandbox
 RUN emerge -v app-portage/layman
 RUN yes | layman -f -a pf4public
 
-RUN emerge -v --binpkg-respect-use=n sys-devel/clang sys-devel/llvm media-libs/libjpeg-turbo virtual/jpeg
+RUN emerge -v --binpkg-respect-use=n sys-devel/clang sys-devel/llvm media-libs/libjpeg-turbo
+RUN emerge -v virtual/jpeg
 RUN emerge -v --binpkg-respect-use=n gnome-base/librsvg
 
 RUN emerge -v app-text/yelp-tools media-sound/pulseaudio x11-libs/libxkbcommon gnome-base/nautilus xfce-base/thunar dev-libs/wayland
