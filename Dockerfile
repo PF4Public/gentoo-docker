@@ -2,7 +2,7 @@ FROM gentoo/portage:latest as portage
 FROM gentoo/stage3-amd64:latest
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
-RUN echo -e "www-client/ungoogled-chromium **\napp-misc/font-manager **\ndev-util/electron **\nnet-misc/sb-hosts **\napp-admin/gb-chroot **\ngnome-extra/nemo" > /etc/portage/package.accept_keywords
+RUN echo -e "www-client/ungoogled-chromium **\napp-misc/font-manager **\ndev-util/electron **\nnet-misc/sb-hosts **\napp-admin/gb-chroot **\ngnome-extra/nemo\ngnome-base/nautilus" > /etc/portage/package.accept_keywords
 RUN echo -e "app-text/poppler -qt5\ngnome-base/nautilus -previewer\nmedia-video/ffmpeg -svg\nmedia-libs/libjpeg-turbo abi_x86_32" > /etc/portage/package.use/custom
 RUN echo -e "PORTAGE_BINHOST='ftp://ftp.calculate-linux.org/calculate/grp/x86_64'\nFEATURES='getbinpkg parallel-install -news -sandbox'\nEMERGE_DEFAULT_OPTS='--autounmask-continue=y --binpkg-changed-deps=n --binpkg-respect-use=y --quiet-build=y'" >> /etc/portage/make.conf
 
