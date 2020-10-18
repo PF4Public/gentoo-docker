@@ -14,7 +14,7 @@ RUN yes | layman -f -a pf4public
 
 RUN emerge -v --getbinpkgonly=y --binpkg-respect-use=n x11-libs/gtk+ sys-devel/clang sys-devel/llvm
 
-RUN emerge -v app-text/yelp-tools media-sound/pulseaudio x11-libs/libxkbcommon media-libs/libjpeg-turbo
+RUN emerge -v app-text/yelp-tools media-sound/pulseaudio media-libs/libjpeg-turbo
 
 RUN emerge -v --onlydeps ungoogled-chromium font-manager electron app-admin/gb-chroot
 RUN emerge -v --fetchonly ungoogled-chromium font-manager electron
