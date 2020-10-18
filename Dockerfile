@@ -12,11 +12,13 @@ RUN emerge -q --unmerge net-misc/openssh sys-apps/sandbox
 RUN emerge -q app-portage/layman
 RUN yes | layman -f -a pf4public
 
-RUN emerge -q --getbinpkgonly=y --binpkg-respect-use=n x11-libs/gtk+ sys-devel/clang sys-devel/llvm gnome-base/nautilus xfce-base/thunar gnome-extra/nemo dev-libs/wayland
+RUN emerge -q --getbinpkgonly=y --binpkg-respect-use=n x11-libs/gtk+ sys-devel/clang sys-devel/llvm
 
 RUN emerge -q app-text/yelp-tools media-sound/pulseaudio media-libs/libjpeg-turbo
 
 RUN emerge -q --onlydeps ungoogled-chromium font-manager electron app-admin/gb-chroot
 RUN emerge -q --fetchonly ungoogled-chromium font-manager electron
+
+RUN emerge -q --nodeps --getbinpkgonly=y --binpkg-respect-use=n gnome-base/nautilus xfce-base/thunar gnome-extra/nemo dev-libs/wayland
 
 RUN layman -d pf4public
