@@ -1,5 +1,6 @@
-FROM gentoo/portage:latest as portage
-FROM gentoo/stage3-amd64:latest
+#Temporary ksmanis
+FROM ksmanis/portage:latest as portage
+FROM ksmanis/stage3:amd64
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
 RUN echo -e "www-client/ungoogled-chromium **\napp-misc/font-manager **\ndev-util/electron **\nnet-misc/sb-hosts **\napp-admin/gb-chroot **\ngnome-extra/nemo\ngnome-base/nautilus\nmedia-plugins/deadbeef-waveform-seekbar **\nmedia-sound/deadbeef" > /etc/portage/package.accept_keywords
