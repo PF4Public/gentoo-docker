@@ -13,7 +13,7 @@ RUN emerge -q --unmerge net-misc/openssh sys-apps/sandbox
 RUN emerge -q app-portage/layman
 RUN yes | layman -f -a pf4public
 
-RUN emerge -v --getbinpkgonly=y x11-libs/gtk+ dev-util/gtk-doc net-libs/webkit-gtk sys-devel/clang sys-devel/llvm
+RUN emerge -v --getbinpkgonly=y --binpkg-respect-use=n dev-util/gtk-doc net-libs/webkit-gtk sys-devel/clang sys-devel/llvm
 
 RUN emerge -v app-text/yelp-tools media-sound/pulseaudio media-libs/libjpeg-turbo
 
