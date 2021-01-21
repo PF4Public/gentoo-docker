@@ -9,6 +9,8 @@ RUN echo -e "PORTAGE_BINHOST='ftp://ftp.calculate-linux.org/calculate/grp/x86_64
 
 RUN eselect profile set default/linux/amd64/17.1/desktop
 
+RUN emerge --info
+
 RUN emerge -q --unmerge net-misc/openssh sys-apps/sandbox
 RUN emerge -q app-portage/layman
 RUN yes | layman -f -a pf4public
