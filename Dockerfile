@@ -14,9 +14,9 @@ RUN yes | layman -f -a pf4public
 
 RUN emerge -v --getbinpkgonly=y --binpkg-respect-use=n dev-util/gtk-doc net-libs/webkit-gtk sys-devel/clang sys-devel/llvm; exit 0
 
-RUN USE=pulseaudio emerge -v app-text/yelp-tools media-sound/pulseaudio media-libs/libjpeg-turbo
+RUN USE=pulseaudio emerge -v app-text/yelp-tools media-sound/pulseaudio media-libs/libjpeg-turbo media-libs/libvpx
 
-RUN emerge -v --onlydeps ungoogled-chromium font-manager electron app-admin/gb-chroot media-plugins/deadbeef-waveform-seekbar
+RUN emerge -v --onlydeps --getbinpkgonly=y --binpkg-respect-use=n ungoogled-chromium font-manager electron app-admin/gb-chroot media-plugins/deadbeef-waveform-seekbar
 RUN emerge -q --fetchonly ungoogled-chromium font-manager electron
 
 RUN emerge -v --nodeps --getbinpkgonly=y --binpkg-respect-use=n gnome-base/nautilus xfce-base/thunar gnome-extra/nemo dev-libs/wayland
