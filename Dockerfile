@@ -20,6 +20,6 @@ RUN USE=pulseaudio emerge -v app-text/yelp-tools media-libs/libjpeg-turbo
 RUN emerge -v --onlydeps ungoogled-chromium font-manager electron app-admin/gb-chroot media-plugins/deadbeef-waveform-seekbar
 RUN emerge -q --fetchonly ungoogled-chromium font-manager electron
 
-RUN emerge -v --nodeps --getbinpkgonly=y --binpkg-respect-use=n gnome-base/nautilus xfce-base/thunar gnome-extra/nemo dev-libs/wayland
+RUN emerge -v --nodeps --getbinpkgonly=y --binpkg-respect-use=n gnome-base/nautilus xfce-base/thunar gnome-extra/nemo
 
 RUN layman -d pf4public
