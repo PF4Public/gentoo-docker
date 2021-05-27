@@ -9,7 +9,7 @@ RUN echo -e "PORTAGE_BINHOST='https://mirror.umd.edu/calculate/grp/x86_64 ftp://
 RUN eselect profile set default/linux/amd64/17.1/desktop
 
 RUN emerge -q --unmerge net-misc/openssh sys-apps/sandbox
-RUN emerge -q app-portage/layman
+RUN emerge -q app-portage/layman app-portage/repoman
 RUN yes | layman -f -a pf4public
 
 RUN emerge -v --getbinpkgonly=y --binpkg-respect-use=n x11-libs/gtk+
