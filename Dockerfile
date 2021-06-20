@@ -7,7 +7,8 @@ RUN echo -e "app-text/poppler -qt5\ngnome-base/nautilus -previewer\nmedia-video/
 RUN echo -e "PORTAGE_BINHOST='https://mirror.umd.edu/calculate/grp/x86_64 ftp://ftp.calculate-linux.org/calculate/grp/x86_64'\nFEATURES='getbinpkg parallel-install -news -sandbox -usersandbox'\nEMERGE_DEFAULT_OPTS='--autounmask-continue=y --binpkg-changed-deps=n --binpkg-respect-use=y --quiet-build=y'" >> /etc/portage/make.conf
 RUN eselect profile set default/linux/amd64/17.1/desktop
 
-RUN emerge -q --unmerge net-misc/openssh sys-apps/sandbox
+RUN emerge -q --unmerge sys-apps/sandbox
+RUN emerge -q --unmerge net-misc/openssh 
 RUN emerge -q app-portage/layman app-portage/repoman
 RUN yes | layman -f -a pf4public
 
