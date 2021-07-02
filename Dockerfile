@@ -10,9 +10,9 @@ RUN mkdir -p /etc/portage/profile
 RUN echo -e "sys-apps/portage -ipc" > /etc/portage/profile/package.use.force
 RUN echo -e "sys-apps/portage ipc" > /etc/portage/profile/package.use.mask
 
-RUN emerge -q --unmerge sys-apps/sandbox
-RUN emerge -q --unmerge net-misc/openssh
-RUN emerge sys-apps/portage
+RUN emerge -v --unmerge sys-apps/sandbox
+RUN emerge -v --unmerge net-misc/openssh
+RUN emerge -v sys-apps/portage
 
 RUN eselect profile set default/linux/amd64/17.1/desktop
 
